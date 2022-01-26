@@ -24,7 +24,7 @@ public class GroundPlaneUI : MonoBehaviour
     [SerializeField] Toggle midAirToggle = null;
 
     bool resetDefaultToggle = true;
-    const string TitleProductPlacement = "Product Placement";
+    const string TitleProductPlacement = "Augmented DataStructure";
     const string TitleGroundPlane = "Ground Plane";
     const string TitleMidAir = "Mid-Air";
 
