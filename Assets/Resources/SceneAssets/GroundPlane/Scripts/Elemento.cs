@@ -75,7 +75,10 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
 
         public void Animar2()
         {
-            
+        }
+
+        public virtual void ConfigureMaterials()
+        {
         }
     }
 }
