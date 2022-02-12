@@ -111,6 +111,10 @@ public class ProductPlacement : MonoBehaviour
                     {
                         if (this.cameraToPlaneHit.collider.gameObject.name == floorName)
                         {
+                            //this.chair.GetComponentsInChildren<MeshRenderer>(true)
+                            //    .Select(x => x.gameObject)
+                            //    .ToList()
+                            //    .ForEach(x => { x.PositionAt(this.cameraToPlaneHit.point); });
                             this.chair.PositionAt(this.cameraToPlaneHit.point);
                         }
                     }

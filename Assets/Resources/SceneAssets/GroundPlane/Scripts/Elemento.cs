@@ -10,24 +10,18 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
 {
     public class Elemento : MonoBehaviour
     {
-        protected GameObject _cube;
-        protected GameObject _line;
+        public GameObject Cube;
+        public GameObject Line;
         protected Elemento _parentElemento;
         protected TipoEstrutura _tipoEstrutura;
-        public Elemento()
-        {
-        }
+        protected Animation _animationCube;
+        protected Animation _animationLine;
+        private bool _scaled;
+
         public void Renderizar(Elemento parentElemento, TipoEstrutura tipoEstrutura)
         {
             _parentElemento = parentElemento;
             _tipoEstrutura = tipoEstrutura;
-            _cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            _cube.transform.parent = gameObject.transform;
-            _cube.gameObject.SetActive(true);
-            _line = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            _line.transform.parent = gameObject.transform;
-            _line.gameObject.SetActive(true);
-
             CalculateTransform();
             ConfigureMaterials();
 
@@ -44,13 +38,12 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
         }
         private void Start()
         {
-            
         }
 
         internal void Destroy()
         {
-            Destroy(_cube);
-            Destroy(_line);
+            Destroy(Cube);
+            Destroy(Line);
         }
 
         public virtual void CalculateTransform()
@@ -59,6 +52,30 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
 
         public virtual void ConfigureMaterials()
         {
+        }
+
+
+        public void Animar()
+        {
+            _animationCube.Play();
+            _animationLine.Play();
+            //if (!_scaled)
+            //{
+            //    _cube.transform.localScale = new Vector3(_cube.transform.localScale.x + 0.05f, _cube.transform.localScale.y + 0.05f, _cube.transform.localScale.z + 0.05f);
+            //    _line.transform.localScale = new Vector3(_line.transform.localScale.x + 0.05f, _line.transform.localScale.y + 0.05f, _line.transform.localScale.z + 0.05f);
+            //    _scaled = true;
+            //}
+            //else
+            //{
+            //    _cube.transform.localScale = new Vector3(_cube.transform.localScale.x - 0.05f, _cube.transform.localScale.y - 0.05f, _cube.transform.localScale.z - 0.05f);
+            //    _line.transform.localScale = new Vector3(_line.transform.localScale.x - 0.05f, _line.transform.localScale.y - 0.05f, _line.transform.localScale.z - 0.05f);
+            //    _scaled = false;
+            //}
+        }
+
+        public void Animar2()
+        {
+            
         }
     }
 }

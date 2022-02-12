@@ -52,10 +52,9 @@ public class GroundPlaneUI : MonoBehaviour
 
     void Update()
     {
-        this.midAirToggle.interactable =
-            this.groundToggle.interactable =
-                this.placementToggle.interactable =
-                    PlaneManager.TrackingStatusIsTrackedOrLimited;
+        //this.midAirToggle.interactable = false;
+        //this.groundToggle.interactable = true;
+        this.placementToggle.interactable = true;
 
         if (this.resetDefaultToggle)
         {
