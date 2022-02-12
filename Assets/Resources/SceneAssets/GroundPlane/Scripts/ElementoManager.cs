@@ -51,17 +51,17 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
                     ((List<ElementoLista>)_elementos).Add((ElementoLista)elemento);
                     break;
             }
-            elemento?.Renderizar(ultimoElemento, TipoEstrutura);
+            elemento?.Renderizar(ultimoElemento, TipoEstrutura, _elementos.Count());
         }
 
         public void RemoverElemento()
         {
-            if (_elementos.Count() == 1)
+            if (_elementos.Count() <= 1)
                 return;
 
             Elemento elemento = null;
             switch (TipoEstrutura)
-            {
+            {   
                 case TipoEstrutura.Fila:
                     elemento = ((Queue<ElementoFila>)_elementos).Dequeue();
                     break;
@@ -70,7 +70,7 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
                     break;
                 case TipoEstrutura.Lista:
                     elemento = ((List<ElementoLista>)_elementos).LastOrDefault();
-                    ((List<Elemento>)_elementos).Remove(elemento);
+                    ((List<ElementoLista>)_elementos).Remove((ElementoLista)elemento);
                     break;
             }
             elemento?.Destroy();
@@ -82,6 +82,26 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
             {
                 elemento.Animar();
             }
+        }
+
+        public void DefinirEstrutura(string tipoEstrutura)
+        {
+            foreach (var elemento in _elementos)
+                elemento.Destroy();
+
+            switch (tipoEstrutura)
+            {
+                case "Fila":
+                    TipoEstrutura = TipoEstrutura.Fila;
+                    break;
+                case "Pilha":
+                    TipoEstrutura = TipoEstrutura.Pilha;
+                    break;
+                case "Lista":
+                    TipoEstrutura = TipoEstrutura.Lista;
+                    break;
+            }
+            Start();
         }
     }
 }

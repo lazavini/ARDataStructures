@@ -12,16 +12,20 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
     {
         public GameObject Cube;
         public GameObject Line;
+        public string Data;
         protected Elemento _parentElemento;
         protected TipoEstrutura _tipoEstrutura;
         protected Animation _animationCube;
         protected Animation _animationLine;
+        private Animator Animator => GetComponent<Animator>();
         private bool _scaled;
+        protected object _data;
 
-        public void Renderizar(Elemento parentElemento, TipoEstrutura tipoEstrutura)
+        public void Renderizar(Elemento parentElemento, TipoEstrutura tipoEstrutura, object data)
         {
             _parentElemento = parentElemento;
             _tipoEstrutura = tipoEstrutura;
+            _data = data;
             CalculateTransform();
             ConfigureMaterials();
 
@@ -42,8 +46,9 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
 
         internal void Destroy()
         {
-            Destroy(Cube);
-            Destroy(Line);
+            this.Animator.Play("RemoverElemento");
+            //Destroy(Cube);
+            //Destroy(Line);
         }
 
         public virtual void CalculateTransform()
@@ -52,6 +57,12 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
 
         public virtual void ConfigureMaterials()
         {
+            Canvas canvasObj = Cube.AddComponent<Canvas>();
+            canvasObj.renderMode = RenderMode.WorldSpace;
+
+            var texts = Cube.GetComponentsInChildren<TextMesh>();
+            foreach (var text in texts)
+                text.text = _data.ToString();
         }
 
 
