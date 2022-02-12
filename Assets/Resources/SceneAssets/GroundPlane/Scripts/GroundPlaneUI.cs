@@ -85,7 +85,7 @@ public class GroundPlaneUI : MonoBehaviour
             else if (PlaneManager.CurrentPlaneMode == PlaneManager.PlaneMode.PLACEMENT)
             {
                 this.instructions.text = (this.productPlacement.IsPlaced) ?
-                    "• Touch and drag to move Structures" +
+                    "• Touch and drag to move Chair" +
                     "\n• Two fingers to rotate" +
                     ((this.touchHandler.enablePinchScaling) ? " or pinch to scale" : "") +
                     "\n• Double-tap to reset Anchor location"
@@ -111,7 +111,7 @@ public class GroundPlaneUI : MonoBehaviour
             else if (PlaneManager.CurrentPlaneMode == PlaneManager.PlaneMode.MIDAIR)
             {
                 this.instructions.text = PlaneManager.TrackingStatusIsTrackedAndNormal ?
-                    "Tap to place data" :
+                    "Tap to place Drone" :
                     "Need better tracking to place a Mid-Air Anchor";
             }
         }
