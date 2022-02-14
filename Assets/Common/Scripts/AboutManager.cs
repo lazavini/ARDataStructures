@@ -13,20 +13,9 @@ public class AboutManager : MonoBehaviour
 {
     public enum AboutScreenSample
     {
-        ImageTargets,
-        VuMark,
-        CylinderTargets,
-        MultiTargets,
-        UserDefinedTargets,
-        ObjectReco,
-        CloudReco,
+       
         VirtualButtons,
-        ModelTargets,
-        GroundPlane,
-        BackgroundTextureAccess,
-        OcclusionManagement,
-        Books,
-        ARVR
+        GroundPlane
     }
 
     #region PUBLIC_MEMBERS
