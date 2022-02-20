@@ -47,19 +47,22 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
         internal void Destroy()
         {
             this.Animator.Play("RemoverElemento");
+            this.transform.SetParent(null);
+            gameObject.SetActive(false);
+            GameObject.Destroy(this);
             //Destroy(Cube);
             //Destroy(Line);
         }
 
         public virtual void CalculateTransform()
         {
+            
         }
 
         public virtual void ConfigureMaterials()
         {
             Canvas canvasObj = Cube.AddComponent<Canvas>();
             canvasObj.renderMode = RenderMode.WorldSpace;
-
             var texts = Cube.GetComponentsInChildren<TextMesh>();
             foreach (var text in texts)
                 text.text = _data.ToString();
@@ -70,22 +73,7 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
         {
             _animationCube.Play();
             _animationLine.Play();
-            //if (!_scaled)
-            //{
-            //    _cube.transform.localScale = new Vector3(_cube.transform.localScale.x + 0.05f, _cube.transform.localScale.y + 0.05f, _cube.transform.localScale.z + 0.05f);
-            //    _line.transform.localScale = new Vector3(_line.transform.localScale.x + 0.05f, _line.transform.localScale.y + 0.05f, _line.transform.localScale.z + 0.05f);
-            //    _scaled = true;
-            //}
-            //else
-            //{
-            //    _cube.transform.localScale = new Vector3(_cube.transform.localScale.x - 0.05f, _cube.transform.localScale.y - 0.05f, _cube.transform.localScale.z - 0.05f);
-            //    _line.transform.localScale = new Vector3(_line.transform.localScale.x - 0.05f, _line.transform.localScale.y - 0.05f, _line.transform.localScale.z - 0.05f);
-            //    _scaled = false;
-            //}
-        }
-
-        public void Animar2()
-        {
+            
         }
     }
 }

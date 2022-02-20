@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
 {
@@ -12,9 +13,13 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
     {
         [SerializeField] public TipoEstrutura TipoEstrutura;
         [SerializeField] public IEnumerable<Elemento> _elementos;
+        public InputField ElementoInput;
+        private Canvas _canvas => gameObject.GetComponentInChildren<Canvas>(true);
 
-        public GameObject ElementoBase => GameObject.FindGameObjectsWithTag("ElementoBase")
-                        .FirstOrDefault(x => x.name == "Elemento" + (TipoEstrutura == TipoEstrutura.Fila ? "Fila" : TipoEstrutura == TipoEstrutura.Pilha ? "Pilha" : "Lista"));
+        public GameObject ElementoBase =>
+            TipoEstrutura == TipoEstrutura.Fila ? gameObject.GetComponentInChildren<ElementoFila>(true).gameObject
+            : TipoEstrutura == TipoEstrutura.Lista ? gameObject.GetComponentInChildren<ElementoLista>(true).gameObject 
+            : gameObject.GetComponentInChildren<ElementoPilha>(true).gameObject;
 
         private void Start()
         {
@@ -32,15 +37,22 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
             }
         }
 
+        public void ExibirInputElemento()
+        {
+            ElementoInput.text = string.Empty;
+            _canvas.gameObject.SetActive(true);
+        }
+
         public void AdicionarElemento()
         {
+            _canvas.gameObject.SetActive(false);
             var ultimoElemento = _elementos?.LastOrDefault();
             var cloneObject = Instantiate(ElementoBase, gameObject.transform, true);
+            cloneObject.SetActive(true);
             var elemento = cloneObject.GetComponent<Elemento>();
             switch (TipoEstrutura)
             {
                 case TipoEstrutura.Fila:
-                    
                     ((Queue<ElementoFila>)_elementos).Enqueue((ElementoFila)elemento);
                     break;
                 case TipoEstrutura.Pilha:
@@ -51,7 +63,7 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
                     ((List<ElementoLista>)_elementos).Add((ElementoLista)elemento);
                     break;
             }
-            elemento?.Renderizar(ultimoElemento, TipoEstrutura, _elementos.Count());
+            elemento?.Renderizar(ultimoElemento, TipoEstrutura, ElementoInput.text);
         }
 
         public void RemoverElemento()
@@ -74,6 +86,7 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
                     break;
             }
             elemento?.Destroy();
+            Destroy(elemento);
         }
 
         public void AnimarElementos()
@@ -87,7 +100,10 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
         public void DefinirEstrutura(string tipoEstrutura)
         {
             foreach (var elemento in _elementos)
+            {
                 elemento.Destroy();
+                Destroy(elemento);
+            }
 
             switch (tipoEstrutura)
             {
