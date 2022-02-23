@@ -61,9 +61,24 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
                     break;
                 case TipoEstrutura.Lista:
                     ((List<ElementoLista>)_elementos).Add((ElementoLista)elemento);
+                    //_elementos = _elementos.OrderBy(x => x.Data).ToList();
                     break;
             }
             elemento?.Renderizar(ultimoElemento, TipoEstrutura, ElementoInput.text);
+
+            if (TipoEstrutura == TipoEstrutura.Lista)
+                RenderizarElementos();
+
+        }
+        public void RenderizarElementos()
+        {
+            var i = 0;
+            _elementos = _elementos.OrderBy(x => x.Data).Cast<ElementoLista>().ToList();
+            foreach (var elemento in _elementos)
+            {
+                elemento.Renderizar(i > 0 ? _elementos.ElementAt(i - 1) : null);
+                i++;
+            }
         }
 
         public void RemoverElemento()

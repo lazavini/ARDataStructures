@@ -12,7 +12,7 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
     {
         public GameObject Cube;
         public GameObject Line;
-        public string Data;
+        public string Data => _data?.ToString();
         protected Elemento _parentElemento;
         protected TipoEstrutura _tipoEstrutura;
         protected Animation _animationCube;
@@ -39,6 +39,11 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
             //myModelTrf.localRotation = Quaternion.identity;
             //myModelTrf.localScale = new Vector3(0.0005f, 0.0005f, 0.0005f);
             //myModelTrf.gameObject.active = true;
+        }
+        public void Renderizar(Elemento parentElemento)
+        {
+            _parentElemento = parentElemento;
+            CalculateTransform();
         }
         private void Start()
         {
