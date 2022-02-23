@@ -883,7 +883,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cube: {fileID: 1777275644}
   Line: {fileID: 2057439821}
-  Data: 
 --- !u!1 &310422455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,7 +1182,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cube: {fileID: 830660536}
   Line: {fileID: 1542460522}
-  Data: 1
 --- !u!95 &377575567
 Animator:
   serializedVersion: 3
@@ -2727,7 +2725,7 @@ Transform:
   m_GameObject: {fileID: 830660536}
   m_LocalRotation: {x: -0, y: 0.9932549, z: -0, w: 0.115951724}
   m_LocalPosition: {x: 0, y: 0.049933672, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 1549639610}
   - {fileID: 1165906372}
@@ -3771,7 +3769,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cube: {fileID: 1486038118}
   Line: {fileID: 1723884158}
-  Data: 1
 --- !u!95 &1092380266
 Animator:
   serializedVersion: 3
@@ -4445,7 +4442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1479447063
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4554,7 +4551,7 @@ Transform:
   m_GameObject: {fileID: 1486038118}
   m_LocalRotation: {x: -0, y: 0.9932549, z: -0, w: 0.115951724}
   m_LocalPosition: {x: 0, y: 0.049933672, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 1673594066}
   - {fileID: 1563916849}
@@ -6120,7 +6117,7 @@ Transform:
   m_GameObject: {fileID: 1777275644}
   m_LocalRotation: {x: -0, y: 0.9932549, z: -0, w: 0.115951724}
   m_LocalPosition: {x: 0, y: 0.04993373, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 53440966}
   - {fileID: 1023299110}

@@ -15,7 +15,7 @@ namespace Assets.Resources.SceneAssets.GroundPlane.Scripts
             base.CalculateTransform();
             Cube.transform.localPosition = new Vector3(0f, 0f, 0f);
             Cube.transform.localRotation = Quaternion.identity;
-            Cube.transform.localPosition = new Vector3(0, (((ElementoPilha)_parentElemento)?.Cube?.transform?.localPosition.y ?? 0) + 0.1f, 0);
+            Cube.transform.localPosition = new Vector3(0, (((ElementoPilha)_parentElemento)?.Cube?.transform?.localPosition.y ?? 0) + 0.08f, 0);
         }
     }
 }
