@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Vuforia;
+using System.Diagnostics;
 
 public class GroundPlaneUI : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GroundPlaneUI : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] Text title = null;
     [SerializeField] Text instructions = null;
+    [SerializeField] Text timer = null;
+    Stopwatch stopwatch = null;
     [SerializeField] CanvasGroup screenReticle = null;
 
     [Header("UI Buttons")]
@@ -24,9 +27,9 @@ public class GroundPlaneUI : MonoBehaviour
     [SerializeField] Toggle midAirToggle = null;
 
     bool resetDefaultToggle = true;
-    const string TitleProductPlacement = "Augmented DataStructure";
-    const string TitleGroundPlane = "Ground Plane";
-    const string TitleMidAir = "Mid-Air";
+    const string TitleProductPlacement = "Data AR";
+    const string TitleGroundPlane = "Data AR";
+    const string TitleMidAir = "Data AR";
 
     GraphicRaycaster graphicRayCaster;
     PointerEventData pointerEventData;
@@ -41,12 +44,11 @@ public class GroundPlaneUI : MonoBehaviour
     void Start()
     {
         this.title.text = TitleProductPlacement;
-
         this.productPlacement = FindObjectOfType<ProductPlacement>();
         this.touchHandler = FindObjectOfType<TouchHandler>();
         this.graphicRayCaster = FindObjectOfType<GraphicRaycaster>();
         this.eventSystem = FindObjectOfType<EventSystem>();
-
+        this.stopwatch = new Stopwatch();
         DeviceTrackerARController.Instance.RegisterDevicePoseStatusChangedCallback(OnDevicePoseStatusChanged);
     }
 
@@ -64,6 +66,7 @@ public class GroundPlaneUI : MonoBehaviour
                 this.resetDefaultToggle = false;
             }
         }
+        this.timer.text = stopwatch.Elapsed.ToString();
     }
 
     void LateUpdate()
@@ -119,7 +122,7 @@ public class GroundPlaneUI : MonoBehaviour
 
     void OnDestroy()
     {
-        Debug.Log("OnDestroy() called.");
+        UnityEngine.Debug.Log("OnDestroy() called.");
 
         DeviceTrackerARController.Instance.UnregisterDevicePoseStatusChangedCallback(OnDevicePoseStatusChanged);
     }
@@ -174,13 +177,29 @@ public class GroundPlaneUI : MonoBehaviour
         }
         return resultIsButton;
     }
+
+    public void StartTimer()
+    {
+        this.stopwatch.Start();
+    }
+
+    public void StopTimer()
+    {
+        this.stopwatch.Stop();
+    }
+
+    public void ResetTimer()
+    {
+        this.stopwatch.Stop();
+        this.stopwatch.Reset();
+    }
     #endregion // PUBLIC_METHODS
 
     #region VUFORIA_CALLBACKS
 
     void OnDevicePoseStatusChanged(TrackableBehaviour.Status status, TrackableBehaviour.StatusInfo statusInfo)
     {
-        Debug.Log("GroundPlaneUI.OnDevicePoseStatusChanged(" + status + ", " + statusInfo + ")");
+        UnityEngine.Debug.Log("GroundPlaneUI.OnDevicePoseStatusChanged(" + status + ", " + statusInfo + ")");
 
         string statusMessage = "";
 

@@ -12,7 +12,7 @@ namespace Assets.SamplesResources.SceneAssets.GroundPlane.Scripts
     {
         public GameObject Cube;
         public GameObject Line;
-        public string Data => _data?.ToString();
+        public int? Data => string.IsNullOrEmpty(_data?.ToString()) ? null :  (int?)int.Parse(_data?.ToString() ?? "0");
         protected Elemento _parentElemento;
         protected TipoEstrutura _tipoEstrutura;
         protected Animation _animationCube;
