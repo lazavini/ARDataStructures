@@ -93,7 +93,7 @@ public class GroundPlaneUI : MonoBehaviour
                     ((this.touchHandler.enablePinchScaling) ? " or pinch to scale" : "") +
                     "\n• Double-tap to reset Anchor location"
                     :
-                    "Tap to place Chair";
+                    "Tap to place DataStructure";
             }
         }
         else

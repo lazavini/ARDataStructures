@@ -97,7 +97,7 @@ public class SamplesMainMenu : MonoBehaviour
             LoadingScreen.SceneToLoad = "3-" + selectedMenuItem;
 
             // Populate the about screen info.
-            this.aboutTitle.text = this.aboutScreenInfo.GetTitle(selectedMenuItem);
+            aboutTitle.text = aboutScreenInfo.GetTitle(selectedMenuItem);
             this.aboutDescription.text = this.aboutScreenInfo.GetDescription(selectedMenuItem);
 
             // Display the about screen.

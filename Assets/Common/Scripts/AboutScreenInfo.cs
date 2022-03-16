@@ -59,7 +59,6 @@ public class AboutScreenInfo
         this.titles = new Dictionary<string, string>()
         {
            
-            { "VirtualButtons", "Virtual Buttons" },
             { "GroundPlane", "Ground Plane" }
            
         };
@@ -98,48 +97,19 @@ public class AboutScreenInfo
 
         // Init our Description Strings
 
-        this.descriptions = new Dictionary<string, string>();
+         // Ground Plane
 
-       
-        // Virtual Buttons
-
-        this.descriptions.Add(
-            "VirtualButtons",
-            description +
-            "\nThe Virtual Buttons sample shows how the developer can define rectangular " +
-            "regions on image targets that trigger an event when touched or occluded in " +
-            "the camera view. The sample renders a 3D object that changes color when " +
-            "one of the virtual buttons is triggered." +
-            "\n\n" +
-            keyFunctionality +
-            "\n• Button occlusion event handling" +
-            "\n\n" +
-            targets +
-            "\n• " + targetPDFsURL +
-            "<color=blue><u>Target PDFs</u></color></link>" +
-            "\n\n" +
-            instructions +
-            "\n• Point camera at target to view" +
-            "\n• Double tap to focus" +
-            "\n\n" +
-            footer + "\n");
-
-
-
-        // Ground Plane
-
-        this.descriptions.Add(
+        descriptions.Add(
             "Ar Structure in AR",
             description +
             "\nThe Ground Plane sample demonstrates how to place " +
             "content on surfaces and in mid-air using anchor points." +
             "\n\n" +
             keyFunctionality +
-            "\n• Hit testing places the Chair or the Astronaut on an intersecting plane in " +
-            "the environment. Try this mode by pressing the Chair or Astronaut buttons." +
-            "\n• Mid-Air anchoring places the drone on an anchor point created " +
+            "\n• Hit testing places the DataStructure on an intersecting plane in " +
+            "the environment. Try this mode by pressing the type of Structure." +
             "at a fixed distance relative to the user. Select this mode by " +
-            "pressing the Drone button." +
+            "pressing the Drone button.???" +
             "\n\n" +
             targets +
             "\n• None required" +
@@ -147,22 +117,14 @@ public class AboutScreenInfo
             instructions +
             "\n• Launch the app and view your environment" +
             "\n• Look around until the indicator shows that you have found a surface" +
-            "\n• Tap to place Chair on the ground" +
-            "\n• Drag with one finger to move Chair along ground" +
+            "\n• Tap to place Data on the ground" +
+            "\n• Drag with one finger to move Data along ground" +
             "\n• Touch and hold with two fingers to rotate Structure" +
             "\n• Select Ground Plane mode" +
             "\n• Tap to place Datas on the ground" +
             "\n• Tap again to move Structure to second point" +
             "\n\n" +
             footer + "\n");
-
-
-        
-
-
-
-
-
        
     }
 

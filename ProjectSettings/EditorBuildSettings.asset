@@ -38,7 +38,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3-VirtualButtons.unity
     guid: 319d9b92c918a47e192e3d3382615bc8
   - enabled: 0
