@@ -717,18 +717,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n<size=26>Description:</size>\n<Loaded at Runtime>\n\n<size=26>Key Functionality:</size>\n\u2022
-    <Loaded at Runtime>\n\n<size=26>Targets:</size>\n\u2022 <Loaded at Runtime>\n\n<size=26>Instructions:</size>\n\u2022
-    <Loaded at Runtime>\n\n<size=26>Build Version Info:</size>\n\u2022 Vuforia #.#.#\n\u2022
-    Unity #.#.#\n\n<size=26>Project Settings Info:</size>\n\u2022 Vuforia Enabled:\n\n<size=26>Statistics:\r</size>\nData
-    collected is used solely for product quality improvements\r\nhttps://developer.vuforia.com/legal/statistics\r\n\n<size=26>Developer
-    Agreement:\r</size>\nhttps://developer.vuforia.com/legal/vuforia-developer-agreement\r\n\r\n<size=26>Privacy
-    Policy:\r</size>\nhttps://developer.vuforia.com/legal/privacy\r\n\n<size=26>Terms
-    of Use:</size>\nhttps://developer.vuforia.com/legal/EULA\n\n\xA9 2018 PTC Inc.
-    All Rights Reserved.\n"
+  m_text: texto teste
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

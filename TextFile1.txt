@@ -1,0 +1,37 @@
+
+<size=26>Description:</size>
+<Loaded at Runtime>
+
+<size=26>Key Functionality:</size>
+• <Loaded at Runtime>
+
+<size=26>Targets:</size>
+• <Loaded at Runtime>
+
+<size=26>Instructions:</size>
+• <Loaded at Runtime>
+
+<size=26>Build Version Info:</size>
+• Vuforia #.#.#
+• Unity #.#.#
+
+<size=26>Project Settings Info:</size>
+• Vuforia Enabled:
+
+<size=26>Statistics:
+</size>
+Data collected is used solely for product quality improvements
+https://developer.vuforia.com/legal/statistics
+
+<size=26>Developer Agreement:
+</size>
+https://developer.vuforia.com/legal/vuforia-developer-agreement
+
+<size=26>Privacy Policy:
+</size>
+https://developer.vuforia.com/legal/privacy
+
+<size=26>Terms of Use:</size>
+https://developer.vuforia.com/legal/EULA
+
+

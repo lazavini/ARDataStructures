@@ -69,7 +69,7 @@ public class AboutScreenInfo
         string unityVersion = UnityEngine.Application.unityVersion;
         UnityEngine.Debug.Log("Vuforia Engine " + vuforiaVersion + "\nUnity " + unityVersion);
 
-        string vuforia = Vuforia.VuforiaRuntime.Instance.InitializationState != Vuforia.VuforiaRuntime.InitState.NOT_INITIALIZED
+        var vuforia = Vuforia.VuforiaRuntime.Instance.InitializationState != Vuforia.VuforiaRuntime.InitState.NOT_INITIALIZED
                                 ? "<#23B200>Yes</color>"
                                 : "<color=red>No</color>";
 
@@ -77,27 +77,10 @@ public class AboutScreenInfo
         string keyFunctionality = "<size=26>Key Functionality:</size>";
         string targets = "<size=26>Targets:</size>";
         string instructions = "<size=26>Instructions:</size>";
-        string footer =
-            "<size=26>Build Version Info:</size>" +
-            "\n• Vuforia Engine " + vuforiaVersion +
-            "\n• Unity " + unityVersion +
-            "\n" +
-            "\n<size=26>Project Settings Info:</size>" +
-            "\n• Vuforia Engine Enabled: " + vuforia +
-            "\n" +
-            "\n<size=26>Links:</size>" +
-            "\n• <link=https://developer.vuforia.com/legal/vuforia-developer-agreement><color=blue><u>Developer Agreement</u></color></link>" +
-            "\n• <link=https://developer.vuforia.com/legal/privacy><color=blue><u>Privacy Policy</u></color></link>" +
-            "\n• <link=https://developer.vuforia.com/legal/EULA><color=blue><u>Terms of Use</u></color></link>" +
-            "\n• <link=https://developer.vuforia.com/legal/statistics><color=blue><u>Statistics</u></color></link>" +
-            "\n\n" +
-            "© 2019 PTC Inc. All Rights Reserved." +
-            "\n";
-        string targetPDFsURL = "<link=https://library.vuforia.com/content/vuforia-library/en/articles/Solution/sample-apps-target-pdfs.html>";
-
+        string footer = "<size=26>Build Version Info:</size>";
         // Init our Description Strings
 
-         // Ground Plane
+        // Ground Plane
 
         descriptions.Add(
             "Ar Structure in AR",
@@ -130,4 +113,8 @@ public class AboutScreenInfo
 
     #endregion // CONSTRUCTOR
 
+}
+
+internal class Dictionary
+{
 }
