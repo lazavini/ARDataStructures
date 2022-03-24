@@ -83,7 +83,7 @@ public class GroundPlaneUI : MonoBehaviour
 
             if (PlaneManager.CurrentPlaneMode == PlaneManager.PlaneMode.GROUND)
             {
-                this.instructions.text = "Tap to place Astronaut";
+                this.instructions.text = "Tap to place Datas";
             }
             else if (PlaneManager.CurrentPlaneMode == PlaneManager.PlaneMode.PLACEMENT)
             {
